@@ -64,11 +64,11 @@ for tr in soup.find_all("tr"):
         continue
 
     # TRUE somente se TODOS forem amarelos
-    empty = all(cor == "empty" for cor in cores_kanban)
+    empty = "VERDADEIRO" if all(cor == "empty" for cor in cores_kanban) else "FALSO"
 
     resultado.append({
         "Material": material,
-        "Empty": str(empty).lower()
+        "Empty": empty
     })
 
 
